@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}users_page {% endblock %}
+
+{% block content %}
+<div>
+<h2>All_Users</h2>
+<ul>
+{% for user in users %}
+<li> <a href ="/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></li>
+
+{% endfor %}
+</ul>
+<input type="submit" value="Add_User">
+
+</div>
+<div>
+<h2>Create a user</h2>
+<form method="post" action="/">
+<input type="text" placeholder="Enter a first name" name="F">
+<input type="text" placeholder="Enter a last name" name="L">
+<input type="text" placeholder="provide an image of this user" name="image">
+<input type="submit" value="Add">
+
+
+</form>
+</div>
+    {% endblock %}
